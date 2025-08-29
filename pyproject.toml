@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hmr2"
+description = "HMR2 as a package"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+
+dependencies = [
+    "gdown",
+    "numpy",
+    "torch",
+    "torchvision",
+    "pytorch-lightning",
+    "smplx==0.1.28",
+    "pyrender",
+    "opencv-python",
+    "yacs",
+    "scikit-image",
+    "einops",
+    "timm",
+    "webdataset",
+    "dill",
+    "pandas",
+    "chumpy @ git+https://github.com/mattloper/chumpy",
+]
+
+[project.optional-dependencies]
+all = [
+    "detectron2 @ git+https://github.com/facebookresearch/detectron2",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
